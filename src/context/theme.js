@@ -6,7 +6,7 @@ export const theme = createContext({
     darktheme: () => {},
     Lighttheme: () => {},
 })
-export const themeprovider = theme.Provider
+export const themeProvider = theme.Provider
 
 export default function usetheme(){
     return(useContext(theme))
