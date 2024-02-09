@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useState } from 'react'
 
 
-function theme() {
+function Theme() {
     const { theme, lighttheme, darktheme} = usetheme()
 
    function  onChangeBtn(){
@@ -30,4 +30,4 @@ function theme() {
   )
 }
 
-export default theme
+export default Theme
