@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useState } from 'react'
-import { themeprovider } from '../../context/theme'
+
 
 function theme() {
     const { theme, lighttheme, darktheme} = usetheme()
