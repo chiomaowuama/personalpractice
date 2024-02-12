@@ -13,7 +13,7 @@ function Header() {
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
                         <img
-                            src="https://th.bing.com/th/id/OIG3.WQb1jTHnGJslbmmPao5f?pid=ImgGn"
+                            src="the-new-logo.png"
                             className="mr-3 h-16 "
                             alt="Logo"
                         />

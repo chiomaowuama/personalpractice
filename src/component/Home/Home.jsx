@@ -2,7 +2,9 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <img src="the-new-logo.png" alt="" srcset="" />
+    </div>
   )
 }
 
