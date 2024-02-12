@@ -11,14 +11,14 @@ const ThemeContextProvider = ({children}) =>{
     
     const  lighttheme = () => {
         setTheme('light')
-      }
+    }
     
-      useEffect(() => {
-        document.querySelector('html').classList.remove('dark', "light")
-        document.querySelector('html').classList.add(Theme)
-      }, [Theme])
+    useEffect(() => {
+    document.querySelector('html').classList.remove('dark', "light")
+    document.querySelector('html').classList.add(Theme)
+    }, [Theme])
     
-      return (
+    return (
         <ThemeContext.Provider value={{Theme, darktheme, lighttheme}}>
             {children}
         </ThemeContext.Provider>

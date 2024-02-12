@@ -1,9 +1,11 @@
 import React from 'react'
-import Theme from '../Themes/Themes.jsx'
+import Theme from '../Themes/Theme.jsx'
 
 
 function Header() {
   return (
+
+      <div>
 
       <div className='border-2 border-green-700 py-2 px-1 dark:bg-red-900 '>
           <div className='flex border-2 border-blue-900'>
@@ -22,6 +24,12 @@ function Header() {
           </div>
           </div>
       </div>
+
+
+
+        {/* the second nav */}
+      </div>
+      
 
    
   
