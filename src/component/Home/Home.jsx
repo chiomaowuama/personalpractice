@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React from 'react'
 import Theme from '../Themes/Theme'
 import  ThemeContext  from '../../context/ThemeContext'
 import { useContext } from 'react'
@@ -8,7 +8,7 @@ function Home() {
   const { Theme, darktheme, lighttheme} = useContext( ThemeContext)
   return (
     <div>
-      <h1>hello</h1>
+      <h1 className='dark:bg-green-800'>hello</h1>
       
     </div>
   )
