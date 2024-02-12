@@ -7,34 +7,9 @@ function Header() {
   return (
 
     <div>
-
-      <div className='border-2 border-green-700 py-2 px-1 dark:bg-red-900 '>
-        <div className='border-2 border-blue-900   flex flex-wrap justify-between items-center mx-auto max-w-screen-xl'>
-            <div className='w-2/5 border-2 border-green-600'>
-             <Link>
-              <h1>hello</h1>
-             </Link>
-            </div>
-            <div className='w-3/5 border-2 border-yellow-200 '>
-            <ul className='flex justify-evenly'>
-              <li>Home</li>
-              <li>Contact</li>
-              <li>About</li>
-              <li>Login</li>
-              <li>Signup</li>
-            
-
-            </ul>
-         
-          </div>
-        </div>
-      </div>
-
-
-
       {/* the second nav */}
-      <header className="shadow sticky z-50 top-0  dark:bg-red-900">
-            <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+      <header className="shadow sticky z-50 top-0">
+            <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-yellow-900">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
                         <img
