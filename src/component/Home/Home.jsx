@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Theme from '../Themes/Theme'
 import  ThemeContext  from '../../context/ThemeContext'
 import { useContext } from 'react'
 
@@ -16,33 +15,33 @@ function Home() {
 
   const Getname = (e) =>{
     e.preventDefault()
-     
+     setFullname(FirstName +" " +  SecondName)
+     console.log(Fullname);
   }
   return (
     <div>
       
       <div>
-        <form onSubmit={Getname} className='border-2 border-green-900 dark:bg-green-900'>
-          <div className='border-2 border-yellow-900 block '>
-            <label htmlFor="">FirstName</label>
-            <input type="text" 
+        <form onSubmit={Getname} className=' border-2 border-blue-900'>
+          
+            <label htmlFor="" >FirstName</label>
+            <input
+             type="text" 
             placeholder='Fristname'
-            className='border-2 border-green-900'
+            className=''
             onChange={(e) => setFirstName(e.target.value)}
             />
-          </div>
-          <div className='block'>
             <label htmlFor="">SecondName</label>
             <input type="text" 
             placeholder='Fristname'
-            className='border-2 border-green-900'
+            className=''
             onChange={(e) => setSecondName(e.target.value)}
             />
-          </div>
+        
           
           <button  className='border-2 border-black' type="submit">Get FullName</button>
         </form>
-        <p> fullname:{Fullname} </p>
+        <p> fullname: {Fullname} </p>
       </div>      
     </div>
   )
