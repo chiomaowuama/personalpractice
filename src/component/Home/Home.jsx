@@ -10,13 +10,13 @@ function Home() {
   const [SecondName, setSecondName]= useState('')
   const [Fullname, setFullname ]= useState(' ')
 
-  console.log(FirstName)
-  console.log(SecondName)
+  // console.log(FirstName)
+  // console.log(SecondName)
   // console.log(Fullname)
 
-  const Getname = (e)=>{
-    e.preventdefault()
-      console("hello")
+  const Getname = (e) =>{
+    e.preventDefault()
+     
   }
   return (
     <div>
