@@ -16,14 +16,13 @@ function Home() {
 
   const Getname = (e)=>{
     e.preventdefault()
-      const Fullname = FirstName 
-      console.log(Fullname)
+      console("hello")
   }
   return (
     <div>
       
       <div>
-        <form onSubmit={(e) => Getname} className='border-2 border-green-900 dark:bg-green-900'>
+        <form onSubmit={Getname} className='border-2 border-green-900 dark:bg-green-900'>
           <div className='border-2 border-yellow-900 block '>
             <label htmlFor="">FirstName</label>
             <input type="text" 
@@ -41,9 +40,9 @@ function Home() {
             />
           </div>
           
-          <button  className='border-2 border-black'>Get FullName</button>
+          <button  className='border-2 border-black' type="submit">Get FullName</button>
         </form>
-        <p > fullname: {}</p>
+        <p> fullname:{Fullname} </p>
       </div>      
     </div>
   )
