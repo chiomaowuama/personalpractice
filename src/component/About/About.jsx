@@ -1,14 +1,8 @@
 import React from 'react'
 import ConsumptionContext from '../../context/ConsumptionContext'
-import { useContext } from 'react'
+import  { useContext } from 'react'
 
 function About() {
-    const [options] = useContext(ConsumptionContext)
-    const findDog = (e) => {
-        e.preventDefault()
-
-    }
-
 
   return (
     <div>
@@ -22,7 +16,7 @@ function About() {
                 </div>
                 <div>
                     <div>
-                        <form action="" onSubmit={findDog}>
+                        <form action="">
                             <select 
                                 className='rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none'
         
@@ -30,7 +24,7 @@ function About() {
                             
 
                                 <option></option>
-                                <h1>{options}</h1>
+                                <h1></h1>
                                 <button type='submit'> clickhere</button>
                             
                             </select>

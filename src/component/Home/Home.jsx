@@ -4,7 +4,7 @@ import { useContext } from 'react'
 
 
 function Home() {
-  const { Theme, darktheme, lighttheme} = useContext( ThemeContext)
+  const { Theme, darktheme, lighttheme} = useContext(ThemeContext)
   const [FirstName, setFirstName]= useState('')
   const [SecondName, setSecondName]= useState('')
   const [Fullname, setFullname ]= useState(' ')
