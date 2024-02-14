@@ -19,29 +19,36 @@ function Home() {
      console.log(Fullname);
   }
   return (
-    <div>
+    <div className='white'>
+      <div className='mt-2 '>
+        <h1 className='text-center py-2 font-serif text-3xl'>Testing usestate </h1>
+      </div>
       
-      <div>
-        <form onSubmit={Getname} className=' border-2 border-blue-900'>
+      <div className=' w-full h-96 flex justify-center items-center'>
+        <form onSubmit={Getname} className='w-4/6 h-5/6 p-3  pt-2 block space-y-4 shadow-md lg:w-3/6'>
           
-            <label htmlFor="" >FirstName</label>
+            <label htmlFor="" className='font-medium text-base font-serif'>Firstname</label>
+            <div>
             <input
-             type="text" 
-            placeholder='Fristname'
-            className=''
+            type="text" 
+            placeholder='Firstname'
+            className='hover-shadow-sm  w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5'
             onChange={(e) => setFirstName(e.target.value)}
             />
-            <label htmlFor="">SecondName</label>
+            </div>
+            <div>
+            <label htmlFor="" className='font-medium text-base font-serif'>Secondname</label>
+            </div>
+            <div>
             <input type="text" 
-            placeholder='Fristname'
-            className=''
+            placeholder='Firstname'
+            className='w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5'
             onChange={(e) => setSecondName(e.target.value)}
             />
-        
-          
-          <button  className='border-2 border-black' type="submit">Get FullName</button>
+            </div>          
+            <button  className='border-2 border- rounded-lg px-5 py-2 shadow-md z-10 duration-300 active:translate-y-1.5 transition-transform ease-in-out  bg-green-600 text-white shrink-0' type="submit">Get Fullname</button>
+            <p className='font-medium text-base font-serif'> Fullname:<span className='font-bold text-base font-serif'> {Fullname} </span>  </p>
         </form>
-        <p> fullname: {Fullname} </p>
       </div>      
     </div>
   )
