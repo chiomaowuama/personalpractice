@@ -1,15 +1,23 @@
-// import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-// const Dogapi = (breedname) =>{
-//     const [data, setData] = useState({});
-//     useEffect(() => {
-//       fetch(`https://dog.ceo/api/breed/${breedname}/images `)
-//       .then((res) => res.json())
-//       .then((res) => setData(res[breedname]))
-//     }, [breedname])
 
-//     console.log(data);
-//     return data
-
-// }
-// export default Dogapi
+function Dogapi(dogtype){
+    const [ Data, setData] = useState({})
+    useEffect(() => {
+        fetch(`https://dog.ceo/api/breed/${dogtype}/images`)
+        .then((res) => {
+            const Data = res.json()
+            console.log(Data)
+            // res.json()
+            return Data
+        })
+        .then((res) =>{
+            console.log(res)
+            setData(res.message)
+        })
+        console.log(Data);
+    }, [dogtype])
+  
+      return Data
+}
+export default Dogapi

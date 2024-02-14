@@ -1,9 +1,18 @@
 import React from 'react'
 import ConsumptionContext from '../../context/ConsumptionContext'
 import  { useContext } from 'react'
+import { useState } from 'react'
 
 function About() {
+    const{Getoptions} = useContext(ConsumptionContext)
+    console.log(Getoptions)
+    const {Select, setSelect} = useState('chioma')
+    const Getdogs = (e) =>{
+        e.preventDefault()
+        return console.log(Select)
 
+
+    }
   return (
     <div>
         <div className='px-5'>
@@ -11,29 +20,14 @@ function About() {
                 <h1 className=' font-semibold text-3xl text-orange-700 font-serif'>Consuming Api while use custom hook</h1>
             </div>
             <div>
-                <div>
-                    {/* dog image slide */}
-                </div>
-                <div>
-                    <div>
-                        <form action="">
-                            <select 
-                                className='rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none'
-        
-                            >
-                            
-
-                                <option></option>
-                                <h1></h1>
-                                <button type='submit'> clickhere</button>
-                            
-                            </select>
-                        </form>
-                    </div>
-                    <div>
-                        {/* into of what the page is going to do which is  */}
-                    </div>
-                </div>
+                <form onSubmit={Getdogs}>
+                    <select
+                    className='w-48 border border-black'
+                    onChange={(e) => setSelect(e.target.value)}>
+                        <option value=""></option>
+                    </select>
+                    <button type="submit"> Submit</button>
+                </form>
             </div>
         </div>
     </div>

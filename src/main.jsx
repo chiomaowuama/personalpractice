@@ -10,6 +10,7 @@ import About from './component/About/About.jsx'
 import Contact from './component/Contact/Contact.jsx'
 import Blogs from './component/Blogs/Blogs.jsx'
 import Signin from './component/Signin/Signin.jsx'
+import ConsumptionContextProvider from './context/ConsumptionContextprovider.jsx'
 
 
 const router = createBrowserRouter(
@@ -31,7 +32,9 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeContextProvider>
-    <RouterProvider router={router} />
+      <ConsumptionContextProvider>
+        <RouterProvider router={router} />
+      </ConsumptionContextProvider>
     </ThemeContextProvider>
   </React.StrictMode>,
 )
