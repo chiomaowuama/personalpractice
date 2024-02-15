@@ -13,7 +13,7 @@ const ConsumptionContextProvider = ({children}) =>{
     
 
     return(
-        <ConsumptionContext.Provider value={{Select, Getoptions}}>
+        <ConsumptionContext.Provider value={{Select}}>
             {children}
         </ConsumptionContext.Provider>
     )
