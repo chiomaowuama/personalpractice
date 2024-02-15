@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ConsumptionContext from '../../context/ConsumptionContext'
 import  { useContext } from 'react'
 import { useState } from 'react'
 
 function About() {
     const{Getoptions} = useContext(ConsumptionContext)
-    console.log(Getoptions)
-    const {Select, setSelect} = useState('chioma')
+    // console.log("about", Getoptions)
+    
+    // const [dogs, setDogs] = useState('')
+
+    useEffect(() => {
+        // setDogs(Getoptions)
+        console.log(Getoptions)
+    }, [Getoptions])
+    
+    // console.log(dogs)
     const Getdogs = (e) =>{
         e.preventDefault()
-        return console.log(Select)
+        // return console.log(Select)
 
 
     }
@@ -21,11 +29,13 @@ function About() {
             </div>
             <div>
                 <form onSubmit={Getdogs}>
-                    <select
-                    className='w-48 border border-black'
-                    onChange={(e) => setSelect(e.target.value)}>
-                        <option value=""></option>
-                    </select>
+                    {/* <select
+                        className='w-48 border border-black'
+                        onChange={(e) => setSelect(e.target.value)}>
+                        {Getoptions.map((message) => (
+                            <option key={Select} value={Select}>{Select}</option>
+                        ))}
+                    </select> */}
                     <button type="submit"> Submit</button>
                 </form>
             </div>
