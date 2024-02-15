@@ -10,7 +10,7 @@ function Dogapi(dogtype){
         // console.log(res)
       
     }, [dogtype])
-    console.log(data)
+    // console.log(data)
     return data
     
  
