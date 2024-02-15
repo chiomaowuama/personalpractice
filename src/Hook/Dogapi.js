@@ -5,21 +5,24 @@ function Dogapi(dogtype){
     const [ Data, setData] = useState([])
     useEffect(() => {
         fetch(`https://dog.ceo/api/breed/${dogtype}/images`)
-        .then((res) => {
-            const Data = res.json()
-            // console.log(Data)
-           setData(Data)
-            return Data
-        })
-        .then((res) =>{
-            // console.log(res)
-            setData(res.message)
-            const rest = res
-            return rest
-        })
+        .then((res) => res.json())
+        .then((res) => setData(res.message))
+        console.log(Data)
     }, [dogtype])
     
     // console.log(Data);
       return Data
 }
 export default Dogapi
+
+// .then((res) => {
+//     const Data = res.json()
+//     console.log(Data)
+//    setData(Data)
+//     return Data
+// })
+// .then((res) =>{
+//     setData(res.message)
+//     const rest = res
+//     return rest
+// })

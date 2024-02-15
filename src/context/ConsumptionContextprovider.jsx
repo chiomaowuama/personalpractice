@@ -7,6 +7,7 @@ const ConsumptionContextProvider = ({children}) =>{
     const[Select, setSelect] = useState('eskimo')
 
     const Getoptions = Dogapi(Select).
+    console.log(Getoptions)
     // console.log("about", Getoptions)
      
     

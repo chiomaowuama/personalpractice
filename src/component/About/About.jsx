@@ -4,7 +4,7 @@ import  { useContext } from 'react'
 import { useState } from 'react'
 
 function About() {
-    const{Getoptions} = useContext(ConsumptionContext)
+    // const{Getoptions} = useContext(ConsumptionContext)
     // console.log("about", Getoptions)
     
     // const [dogs, setDogs] = useState('')
