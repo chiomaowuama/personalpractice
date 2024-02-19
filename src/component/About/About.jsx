@@ -4,20 +4,18 @@ import { useState } from 'react'
 import ConsumptionContext from '../../context/ConsumptionContext'
 
 function About() {
-    const [Select, setSelect] = useState()
-    const{Options} = useContext(ConsumptionContext)
+    const [SelectDog, setSelectDog] = useState()
+    const{Select, Options, Getpicture} = useContext(ConsumptionContext)
     console.log("about", Options)
     
-    // const [dogs, setDogs] = useState('')
-
-    // useEffect(() => {
-        // setDogs(Getoptions)
-        // console.log(Getoptions)
-    // }, [Getoptions])
-    
-    // console.log(dogs)
+  
     const Getdogs = (e) =>{
         e.preventDefault()
+        if(!SelectDog){
+            alert('Dog not choosen')
+        }else{
+            Getpicture()
+        }
         // return console.log(Select)
 
 
@@ -31,9 +29,9 @@ function About() {
             <div>
                 <form onSubmit={Getdogs}>
                     <select
-                    className='w-48 border border-black'
-                    value={selectedDogtype}
-                    onChange={(e) => setSelect(e.target.value)}>
+                    className='w-48 border border-black outline-none'
+                    value={SelectDog}
+                    onChange={(e) => setSelectDog(e.target.value)}>
                     
                     {Options.map((Dog) => (
                     <option key={Dog} value={Dog}>{Dog}</option>

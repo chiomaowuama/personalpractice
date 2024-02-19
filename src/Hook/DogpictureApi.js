@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react"
 
-function DogpictureApi() {
+function DogpictureApi(Select) {
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch(`https://dog.ceo/api/breed/${dogtype}/images`)
+        fetch(`https://dog.ceo/api/breed/${Select}/images`)
         .then((res) => res.json())
         .then((res) => setData(res.message))
         // console.log(res)
       
-    }, [dogtype])
+    }, [Select])
     // console.log(data)
     return data
     
