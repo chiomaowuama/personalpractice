@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react"
 
 
-function Dogapi(dogtype){
+function Dogapi(){
     const [data, setData] = useState([])
     useEffect(() => {
-        fetch(`https://dog.ceo/api/breed/${dogtype}/images`)
+        fetch(`https://dog.ceo/api/breeds/list/all`)
         .then((res) => res.json())
         .then((res) => setData(res.message))
         // console.log(res)
       
-    }, [dogtype])
+    }, [])
     // console.log(data)
     return data
     

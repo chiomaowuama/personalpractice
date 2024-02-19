@@ -6,13 +6,13 @@ import Dogapi from "../Hook/Dogapi";
 const ConsumptionContextProvider = ({children}) =>{
     const[Select, setSelect] = useState('eskimo')
 
-    const Getoptions = Dogapi(Select)
-    const options = Object.keys(Getoptions)
-    console.log(options)
+    const Getoptions = Dogapi()
+    const Options = Object.keys(Getoptions)
+    console.log(Options)
 
 
     return(
-        <ConsumptionContext.Provider value={{Select}}>
+        <ConsumptionContext.Provider value={{Select, Options}}>
             {children}
         </ConsumptionContext.Provider>
     )

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-// import ConsumptionContext from '../../context/ConsumptionContext'
-// import  { useContext } from 'react'
+import  { useContext } from 'react'
 import { useState } from 'react'
+import ConsumptionContext from '../../context/ConsumptionContext'
 
 function About() {
     const [Select, setSelect] = useState()
-    // const{Getoptions} = useContext(ConsumptionContext)
-    // console.log("about", Getoptions)
+    const{Options} = useContext(ConsumptionContext)
+    console.log("about", Options)
     
     // const [dogs, setDogs] = useState('')
 
@@ -32,10 +32,12 @@ function About() {
                 <form onSubmit={Getdogs}>
                     <select
                     className='w-48 border border-black'
+                    value={selectedDogtype}
                     onChange={(e) => setSelect(e.target.value)}>
-                      
-                        <option></option>
-                       
+                    
+                    {Options.map((Dog) => (
+                    <option key={Dog} value={Dog}>{Dog}</option>
+                    ))}
                     </select>
                     <button type="submit"> Submit</button>
                 </form>
