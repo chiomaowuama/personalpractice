@@ -9,11 +9,11 @@ const ConsumptionContextProvider = ({children}) =>{
 
     const Getoptions = Dogapi()
     const Options = Object.keys(Getoptions)
-    console.log(Options)
+    // console.log(Options)
 
-    const Getpicture = () =>{
+    const Getpicture = (Select) =>{
         const Dogpictures = DogpictureApi(Select)
-        console.log( Dogpictures )
+        console.log(Dogpictures)
     }
 
 
