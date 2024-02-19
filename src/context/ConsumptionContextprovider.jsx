@@ -1,20 +1,33 @@
 import ConsumptionContext from "./ConsumptionContext";
-import React, {  useState } from "react";
+import React, {  useCallback, useState } from "react";
 import Dogapi from "../Hook/Dogapi";
-import DogpictureApi from "../Hook/DogpictureApi";
+import useDogpictureApi from "../Hook/DogpictureApi";
 
 
 const ConsumptionContextProvider = ({children}) =>{
-    const[Select, setSelect] = useState('eskimo')
+    const[Select, setSelect] = useState()
 
     const Getoptions = Dogapi()
     const Options = Object.keys(Getoptions)
-    // console.log(Options)
+    // this up part is for getting the totaol list of dogs that were put in the select
 
-    const Getpicture = (Select) =>{
-        const Dogpictures = DogpictureApi(Select)
-        console.log(Dogpictures)
-    }
+    console.log(Select)
+    const Dogpictures = useDogpictureApi(Select)
+    const FewDogpic = 
+    console.log(Dogpictures)
+    // this upside helps us use the custom hook
+    const Getpicture = useCallback((Select) => {
+        // console.log(Select)
+        setSelect(Select)
+        // this helps us set the select into the one up here so we can use it in the custom hook
+        
+    }, [Select])
+    // tot process is to use the new variable created to  as a container to slice the api resondse on picures, then export the variable then use loop to display it 
+    
+
+
+
+   
 
 
     return(
