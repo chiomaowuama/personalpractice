@@ -6,9 +6,10 @@ import ConsumptionContext from '../../context/ConsumptionContext'
 function About() {
     const [Select, setSelect] = useState('eskimo')
     const{Fewpic, Options, Getpicture} = useContext(ConsumptionContext)
-    console.log("about", Fewpic)
     
-  
+    const Animals = Fewpic
+    console.log(Animals)
+    
     const Getdogs = (e) =>{
         e.preventDefault()
         if(!Select){
@@ -44,6 +45,7 @@ function About() {
         {/* this is the part that shows the pictures */}
 
         <div>
+          
           
             {/* {fewpic.map((pic, index) =>(  */}
 
