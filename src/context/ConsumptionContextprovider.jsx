@@ -1,5 +1,5 @@
 import ConsumptionContext from "./ConsumptionContext";
-import React, {  useCallback, useState } from "react";
+import React, {  useCallback, useEffect, useState } from "react";
 import Dogapi from "../Hook/Dogapi";
 import useDogpictureApi from "../Hook/DogpictureApi";
 
@@ -13,23 +13,33 @@ const ConsumptionContextProvider = ({children}) =>{
 
     const Dogpictures = useDogpictureApi(Select)
     const Fewpic =  Dogpictures.slice(0, 5)
-    // Object.keys( Dogpictures
+   
+    // tring something new
+ 
+ 
+
+    // something new ends here
     
-    console.log(Fewpic)
+    // console.log(Fewpic)
 
         // console.log(Fewpic)
     
     // this upside helps us use the custom hook
     const Getpicture = useCallback((Select) => {
-        console.log(Select)
+        // console.log(Select)
         setSelect(Select)
+        
         // FewDogpic()
         // this helps us set the select into the one up here so we can use it in the custom hook
         
     }, [Select])
     // tot process is to use the new variable created to  as a container to slice the api resondse on picures, then export the variable then use loop to display it 
 
-
+    useEffect(() => {
+        
+        
+          
+    }) 
 
     return(
         <ConsumptionContext.Provider value={{Select, Options, Fewpic, Getpicture}}>
