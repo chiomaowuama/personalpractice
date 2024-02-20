@@ -8,7 +8,7 @@ function About() {
     const{Fewpic, Options, Getpicture} = useContext(ConsumptionContext)
     
     const Animals = Fewpic
-    // console.log(Animals)
+    console.log(Animals)
     
     const Getdogs = (e) =>{
         e.preventDefault()
