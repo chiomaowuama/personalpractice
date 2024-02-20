@@ -13,8 +13,8 @@ const ConsumptionContextProvider = ({children}) =>{
 
     // console.log(Select)
     const Dogpictures = useDogpictureApi(Select)
-    const fewpic = Dogpictures.slice(0, 5)
-        console.log(fewpic)
+    const Fewpic = Dogpictures.slice(0, 5)
+        console.log(Fewpic)
     // const FewDogpic = (Dogpictures) =>{
     //     const Fewpic = Dogpictures.slice()
     // }
@@ -31,7 +31,7 @@ const ConsumptionContextProvider = ({children}) =>{
 
 
     return(
-        <ConsumptionContext.Provider value={{Select, Options, fewpic, Getpicture}}>
+        <ConsumptionContext.Provider value={{Select, Options, Fewpic, Getpicture}}>
             {children}
         </ConsumptionContext.Provider>
     )
