@@ -5,7 +5,7 @@ import ConsumptionContext from '../../context/ConsumptionContext'
 
 function About() {
     const [Select, setSelect] = useState('eskimo')
-    const{fewpic, Options, Getpicture} = useContext(ConsumptionContext)
+    const{Fewpic, Options, Getpicture} = useContext(ConsumptionContext)
     
     const Animals = Fewpic
     console.log(Animals)
