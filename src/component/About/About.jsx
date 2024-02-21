@@ -31,21 +31,25 @@ function About() {
     // }, [Animals])
   return (
     <div>
-        <div className='px-5'>
+        <div className='bg-zinc-100 dark:bg-slate-800 space-y-3'>
             <div className='border-2 border-green-800 py-3 flex justify-center items-center   '>
                 <h1 className=' font-semibold text-3xl text-orange-700 font-serif'>Consuming Api while use custom hook</h1>
             </div>
-            <div>
-                <form onSubmit={Getdogs}>
+            <div className='border-2 border-green-500 p-3 '>
+                <form onSubmit={Getdogs} className='border-2 border-yellow-200 '>
+                    <div className='border-2 border-green-800 flex justify-center items-center' >
                     <select
-                    className='w-48 border border-black outline-none'
+                    className= ' border-2 border-red-700 w-4/5  outline-none text-xl font-semibold font-mono  md:w-5/6 dark:bg-pur'
                     value={Select}
                     onChange={(e) => setSelect(e.target.value)}>                
                     {Options.map((Dog) => (
-                    <option key={Dog} value={Dog}>{Dog}</option>
+                    <option className='' key={Dog} value={Dog}>{Dog}</option>
                     ))}
                     </select>
+                    </div>
+                    <div>
                     <button type="submit"> Submit</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -57,7 +61,7 @@ function About() {
                 {Animals.map((pic, index) => (
                 <img key={index} src={pic} alt={`dog-image-${index}`} />
                 ))}
-        </div>
+             </div>
            
             {/* <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="/">

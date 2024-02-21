@@ -6,7 +6,15 @@ export default {
   ],
   darkMode:"class",
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        "projectbg": "#e8f4f4",
+        "turneddark": "#45125d"
+        // "productsred": "#840303 ",
+        // "navbg":"#5e48db",
+  
+      },
+    },
   },
   plugins: [],
 }
