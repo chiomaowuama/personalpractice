@@ -6,14 +6,24 @@ import useDogpictureApi from "../Hook/DogpictureApi";
 
 const ConsumptionContextProvider = ({children}) =>{
     const[Select, setSelect] = useState()
-    const[doglist, setDoglist] = useState()
+    // const[doglists, setDoglists] = useState({})
 
     const Getoptions = Dogapi()
     const Options = Object.keys(Getoptions)
     // this up part is for getting the totaol list of dogs that were put in the select
 
-    const Dogpictures = useDogpictureApi(Select)   
+    const Dogpictures = useDogpictureApi(Select)  
     const Fewpic = Dogpictures.slice(0, 5)
+    //  useEffect(()=>{
+    //     const dogfew = Object.assign({}, Fewpic);
+    //     setDoglists(Fewpic)
+    //     console.log(dogfew)
+    //  })
+ 
+    // const doglist = (doglists) => {
+    //     setDoglists(Fewpic)
+    //     console.log(doglists)
+    // }
  
     // console.log(Fewpic )
     // this upside helps us use the custom hook

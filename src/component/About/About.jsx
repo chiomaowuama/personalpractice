@@ -7,8 +7,11 @@ function About() {
     const [Select, setSelect] = useState('eskimo')
     const{Fewpic, Options, Getpicture} = useContext(ConsumptionContext)
     
-    const Animals = Fewpic || [];
-    // console.log({Animals})
+    let Animals = [];
+    if (Fewpic instanceof Array) {
+        Animals = Fewpic;
+    }
+    console.log('Animals', Animals)
     
     const Getdogs = (e) =>{
         e.preventDefault()
@@ -22,10 +25,10 @@ function About() {
 
 
     }
-    useEffect(() => {
-        console.log(Animals)
+    // useEffect(() => {
+    //     console.log(Animals)
 
-    }, [Animals])
+    // }, [Animals])
   return (
     <div>
         <div className='px-5'>
@@ -50,11 +53,11 @@ function About() {
 
         <div>
          
-            {/* <div>
+            <div>
                 {Animals.map((pic, index) => (
                 <img key={index} src={pic} alt={`dog-image-${index}`} />
                 ))}
-        </div> */}
+        </div>
            
             {/* <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="/">
