@@ -31,7 +31,7 @@ function About() {
     // }, [Animals])
   return (
     <div>
-        <div className='bg-zinc-100 dark:bg-slate-800 space-y-3'>
+        <div className='bg-projectbg dark:bg-slate-800 space-y-3'>
             <div className='border-2 border-green-800 py-3 flex justify-center items-center   '>
                 <h1 className=' font-semibold text-3xl text-orange-700 font-serif'>Consuming Api while use custom hook</h1>
             </div>

@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors:{
-        "projectbg": "#e8f4f4",
+        "projectbg": "#f7fbfb",
         "turneddark": "#45125d"
         // "productsred": "#840303 ",
         // "navbg":"#5e48db",
