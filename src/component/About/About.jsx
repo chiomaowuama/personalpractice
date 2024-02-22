@@ -32,14 +32,14 @@ function About() {
   return (
     <div>
         <div className='bg-projectbg dark:bg-turneddark space-y-3'>
-            <div className='border-2 border-green-800 py-3 flex justify-center items-center   '>
+            <div className=' py-3 flex justify-center items-center   '>
                 <h1 className=' font-semibold text-3xl text-black dark:text-white font-serif'>Consuming Api while use custom hook</h1>
             </div>
-            <div className='border-2 border-green-500 p-3 '>
-                <form onSubmit={Getdogs} className='border-2 border-yellow-200 '>
-                    <div className='border-2 border-green-800 flex justify-center items-center' >
+            <div className=' p-3 '>
+                <form onSubmit={Getdogs} className=''>
+                    <div className='flex justify-center items-center' >
                     <select
-                    className= ' border-2 border-red-700 w-4/5 dark:text-black bg-projectbg dark:bg-white outline-none text-xl font-semibold font-mono  md:w-5/6 dark:bg-pur'
+                    className= 'border border-black w-4/5 dark:text-black bg-projectbg dark:bg-white outline-none text-xl font-semibold font-mono  md:w-5/6 dark:bg-pur py-1'
                     value={Select}
                     onChange={(e) => setSelect(e.target.value)}>                
                     {Options.map((Dog) => (
@@ -47,19 +47,19 @@ function About() {
                     ))}
                     </select>
                     </div>
-                    <div>
-                    <button type="submit"> Submit</button>
+                    <div className=' w-5/6 mx-auto my-3 rounded-xl'>
+                    <button type="submit" className='border border-black w-full py-1 text-xl rounded-xl font-mono font-bold bg-white'> Submit</button>
                     </div>
                 </form>
             </div>
         </div>
         {/* this is the part that shows the pictures */}
 
-        <div>
+        <div className=' dark:bg-turneddark'>
          
-            <div className='border-2 border-green-900 w-5/6 mx-auto flex flex-wrap justify-center '>
+            <div className='w-5/6 mx-auto flex flex-wrap justify-center'>
                 {Animals.map((pic, index) => (
-                <img key={index} src={pic} alt={`dog-image-${index}`} className='w-80 h-72 my-2 mx-2 border-2 border-yellow-700 '/>
+                <img key={index} src={pic} alt={`dog-image-${index}`} className='w-80 h-72 my-2 mx-2 border border-black rounded-3xl  bg-projectbg dark:bg-turneddark'/>
                 ))}
              </div>
            
