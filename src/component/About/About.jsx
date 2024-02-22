@@ -31,19 +31,19 @@ function About() {
     // }, [Animals])
   return (
     <div>
-        <div className='bg-projectbg dark:bg-slate-800 space-y-3'>
+        <div className='bg-projectbg dark:bg-turneddark space-y-3'>
             <div className='border-2 border-green-800 py-3 flex justify-center items-center   '>
-                <h1 className=' font-semibold text-3xl text-orange-700 font-serif'>Consuming Api while use custom hook</h1>
+                <h1 className=' font-semibold text-3xl text-black dark:text-white font-serif'>Consuming Api while use custom hook</h1>
             </div>
             <div className='border-2 border-green-500 p-3 '>
                 <form onSubmit={Getdogs} className='border-2 border-yellow-200 '>
                     <div className='border-2 border-green-800 flex justify-center items-center' >
                     <select
-                    className= ' border-2 border-red-700 w-4/5  outline-none text-xl font-semibold font-mono  md:w-5/6 dark:bg-pur'
+                    className= ' border-2 border-red-700 w-4/5 dark:text-black bg-projectbg dark:bg-white outline-none text-xl font-semibold font-mono  md:w-5/6 dark:bg-pur'
                     value={Select}
                     onChange={(e) => setSelect(e.target.value)}>                
                     {Options.map((Dog) => (
-                    <option className='' key={Dog} value={Dog}>{Dog}</option>
+                    <option className='text-sm font-semibold font-mono space-x-2 w-20 dark:bg-turneddark bg-projectbg' key={Dog} value={Dog}>{Dog}</option>
                     ))}
                     </select>
                     </div>
@@ -57,9 +57,9 @@ function About() {
 
         <div>
          
-            <div>
+            <div className='border-2 border-green-900 w-5/6 mx-auto flex flex-wrap justify-center '>
                 {Animals.map((pic, index) => (
-                <img key={index} src={pic} alt={`dog-image-${index}`} />
+                <img key={index} src={pic} alt={`dog-image-${index}`} className='w-80 h-72 my-2 mx-2 border-2 border-yellow-700 '/>
                 ))}
              </div>
            

@@ -13,7 +13,7 @@ const ConsumptionContextProvider = ({children}) =>{
     // this up part is for getting the totaol list of dogs that were put in the select
 
     const Dogpictures = useDogpictureApi(Select)  
-    const Fewpic = Dogpictures.slice(0, 5)
+    const Fewpic = Dogpictures.slice(0, 6)
     //  useEffect(()=>{
     //     const dogfew = Object.assign({}, Fewpic);
     //     setDoglists(Fewpic)

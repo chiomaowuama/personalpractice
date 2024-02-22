@@ -9,7 +9,7 @@ export default {
     extend: {
       colors:{
         "projectbg": "#f7fbfb",
-        "turneddark": "#45125d"
+        "turneddark": "#2b0b3a"
         // "productsred": "#840303 ",
         // "navbg":"#5e48db",
   
