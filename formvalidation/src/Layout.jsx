@@ -1,7 +1,7 @@
-import React from "react";
+import react from "react"
 import { Outlet } from 'react-router-dom'
-import Header from "./Component/header";
-import Footer from "./Component/Footer";
+import Header from "./Component/Header.jsx";
+import Footer from "./Component/Footer.jsx";
 
 import React from 'react'
 
@@ -16,3 +16,5 @@ function Layout() {
 }
 
 export default Layout
+
+
