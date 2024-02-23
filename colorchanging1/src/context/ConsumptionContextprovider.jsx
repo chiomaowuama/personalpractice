@@ -14,18 +14,6 @@ const ConsumptionContextProvider = ({children}) =>{
 
     const Dogpictures = useDogpictureApi(Select)  
     const Fewpic = Dogpictures.slice(0, 6)
-    //  useEffect(()=>{
-    //     const dogfew = Object.assign({}, Fewpic);
-    //     setDoglists(Fewpic)
-    //     console.log(dogfew)
-    //  })
- 
-    // const doglist = (doglists) => {
-    //     setDoglists(Fewpic)
-    //     console.log(doglists)
-    // }
- 
-    // console.log(Fewpic )
     // this upside helps us use the custom hook
     const Getpicture = useCallback((Select) => {
         // console.log(Select)
