@@ -1,51 +1,105 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+
 
 function Header() {
   return (
-    <>
-    <div className='border-2 p-2 flex flex-row '>
-        <div className='w-1/6 border-2 border-black'>
-            <img src="" alt="" />
-            <h1>hello</h1>
-        </div>
-        <div className='w-4/6 border-2 border-green-800'>
-            <div className='w-4/5 mx-auto'>
-            <ul className='flex text-blue-950 text-lg font-mono font-semibold justify-around items-start '>
 
-                <li className=''>
-                    <NavLink
-                        to="/"
+    <div>
+      {/* the second nav */}
+      <header className="shadow sticky z-50 top-0">
+            <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 ">
+                <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                    <Link to="/" className="flex items-center">
+                        <img
+                          src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
+                          className="mr-3 h-16 "
+                          alt="Logo"
+                        />
+                    </Link>    
+                  
+                    <div
+                        className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+                        id="mobile-menu-2"
+                    >
+                        <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                            <li>
+                                <NavLink
+                                to="/"
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
+                                        ${isActive ? "text-orange-700" : "text-gray-700" } lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }
+                                >
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                to="/About"
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
+                                        ${isActive ? "text-orange-700" : "text-gray-700" } lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }
+                                >
+                                    About
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                to="/Contactus"
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
+                                        ${isActive ? "text-orange-700" : "text-gray-700" } lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }
+                                >
+                                    Contact
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                to="/Blogs"
+                                    className={({isActive}) =>
+                                        `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
+                                        ${isActive ? "text-orange-700" : "text-gray-700" } lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }
+                                >
+                                    Blogs
+                                </NavLink>
+                            </li>
+                            <li>
+                              <NavLink
+                            to="/Signup"
                             className={({isActive}) =>
                                 `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
                                 ${isActive ? "text-orange-700" : "text-gray-700" } lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
                             }
+                            >
+                                Signin
+                            </NavLink>
+                            </li>
+                           
+                            
+                        </ul>
+                    </div>
+                    <div className="flex items-center lg:order-2">
+                       
+                        <Link
+                            to="#"
+                            className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
                         >
-                            Home
-                    </NavLink>
-                </li>
-                <li  className=''>
-                    <NavLink 
-                    to="/Contactus"
-                            className={({isActive}) =>
-                            `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100
-                            ${isActive ? "text-orange-700" : "text-gray-700"} lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`}
-                  
-                    >
-
-                    Contact
-                    </NavLink>
-                </li>
-                <li  className=''>Register</li>
-                <li  className=''>Blogs</li>
-            </ul>
-            </div>
-        </div>
-        <div className='w-1/6 border-2 border-black flex justify-center'>
-            <p>cart</p>
-        </div>
+                            Get started
+                        </Link>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
     </div>
-    </>
+      
+
+   
+  
   )
 }
 

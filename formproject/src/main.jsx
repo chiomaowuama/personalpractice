@@ -7,13 +7,19 @@ import Layout from './Layout.jsx'
 import Home from './Home/Home.jsx'
 import About from './About/About.jsx'
 import Contactus from './Contactus/Contactus.jsx'
+import Blogs from './Blogs/Blogs.jsx'
+import Signup from './Signup/Signup.jsx'
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
         <Route path='' element={<Home/>}/>
-        <Route path='' element={<About/>}/>
+        <Route path='/About' element={<About/>}/>
         <Route path='/Contactus' element={<Contactus/>}/>
+        <Route path='/Blogs' element={<Blogs/>}/>
+        <Route path='/Signup' element={<Signup/>}/>
+
       </Route>
   )
 )
