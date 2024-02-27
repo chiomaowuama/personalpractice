@@ -1,9 +1,10 @@
 import React from 'react'
-import UseForm from 'react-hook-form'
+import { useForm } from 'react-hook-form'
+// import { Devtool } from '@hookform/devtools'
 
 function Signup() {
-    const Form = UseForm()
-    const{ register } = Form
+    const Form = useForm()
+    const { register} = Form
   return (
     <>
     <div>
@@ -13,13 +14,14 @@ function Signup() {
                 <label htmlFor=''>Username</label>
                 <input type='text' id='text' {...register("username")} className=' border border-black'/>
                 <label htmlFor="password">Password</label>
-                <input type="text" name="" id="password"  {...register("password")} className=' border border-black' />
+                <input type="text" name="" id="password" {...register("password")}  className=' border border-black' />
                 <label htmlFor="email">Email</label>
-                <input type="email" name="" id="email"  {...register("email")}  className=' border border-black'/>
+                <input type="email" name="" id="email" {...register("email")}   className=' border border-black'/>
                 <label htmlFor="Phone">Phone No</label>
-                <input type="tel" name="" min={10} max={11} id="phone"  {...register("phone")} className=' border border-black'/>
+                <input type="tel" name="" min={10} max={11} id="phone" {...register("phone")}  className=' border border-black'/>
             <button type="submit" className='border-2 border-green-700 w-3/5 self-center'>Submit</button>
             </div>
+            {/* <Devtool Control= "Control" /> */}
         </form>
        
     </div>
