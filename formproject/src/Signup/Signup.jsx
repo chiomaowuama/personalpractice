@@ -10,7 +10,7 @@ function Signup() {
 
      const allSubmit = (data) =>{
         
-        console.log("working")
+        console.log("working", data)
      }
   return (
     <>
