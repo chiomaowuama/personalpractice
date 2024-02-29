@@ -4,7 +4,17 @@ import { DevTool } from '@hookform/devtools'
 // import { Devtool } from '@hookform/devtools'
 
 function Signup() {
-    const Form = useForm()
+    const Form = useForm({
+        defaultValues: async() =>{
+            const response = await fetch("https://jsonplaceholder.typicode.com/users/1")
+            const data = await response.json()
+            return{
+                username:"Bathman",
+                email:data.email,
+                phone:""
+            }
+        }
+    })
     const { register, control,handleSubmit,formState} = Form
     const{ errors } = formState
 
@@ -30,8 +40,17 @@ function Signup() {
                     message: "Invalid email format",
                    
                 },
-                validate:(data) =>{
-                    return( data !== "admin@example.com" ||  "Enter a different email adress")
+                validate:{
+                    notAdmin:(data) =>{
+                        return( data !== "admin@example.com" ||  "Enter a different email adress");
+                    },
+                    notBlackListed: (data) =>{
+                        return(
+                            !data.endsWith("baddomain.com") || "This domain is not supported "
+                        )
+                    }
+
+
                 }
                 })}   className=' border border-black'/>
                  <p className=''>{errors.email?.message }</p>
