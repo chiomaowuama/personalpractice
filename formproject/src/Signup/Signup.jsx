@@ -19,16 +19,22 @@ function Signup() {
             <div className='flex flex-col w-4/6 lg:w-2/6 space-y-2  border-2 border-green-900 shadow-xl shadow-slate-400 p-3' >
                 <p>Form Submission</p>
                 <label htmlFor=''>Username</label>
-                <input type='text' id='text' {...register("username", {message:"invalid username format", required:"field required"})} className=' border border-black'/>
-                <p>{errors.username?.message }</p>
+                <input type='text' id='text' {...register("username", { required:"field required"})} className=' border border-black'/>
+                <p className=' text-red-600 text-sm text-left'>{errors.username?.message }</p>
                 <label htmlFor="password">Password</label>
                 <input type="text" name="" id="password" {...register("password", {required:"username field required"})}  className=' border border-black' />
                 <label htmlFor="email">Email</label>
-                <input type="email" name="" id="email" {...register("email", {pattern:{ 
+                <input type="email" name="" id="email" {...register("email", 
+                {pattern:{ 
                     value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                     message: "Invalid email format",
-                }})}   className=' border border-black'/>
-                 <p>{errors.email?.message }</p>
+                   
+                },
+                validate:(data) =>{
+                    return( data !== "admin@example.com" ||  "Enter a different email adress")
+                }
+                })}   className=' border border-black'/>
+                 <p className=''>{errors.email?.message }</p>
                 <label htmlFor="Phone">Phone No</label>
                 <input type="tel" name="" min={10} max={11} id="phone" {...register("phone", {required:"field required"})}  className=' border border-black'/>
             <button type="submit" className='border-2 border-green-700 w-3/5 self-center'>Submit</button>
