@@ -8,7 +8,12 @@ function Signup() {
         defaultValues:{
             username: " ",
             email:"",
-            channel:""
+            channel:"",
+            social:{
+            twitter:"",
+            facebook:" ",
+                
+            }
         }
     })
     const { register, control,handleSubmit,formState} = Form
@@ -52,6 +57,14 @@ function Signup() {
                  <p className=''>{errors.email?.message }</p>
                 <label htmlFor="Phone">Phone No</label>
                 <input type="tel" name="" min={10} max={11} id="phone" {...register("phone", {required:"field required"})}  className=' border border-black'/>
+
+                <label htmlFor=''>FaceBook</label>
+                <input type='text' id='text' {...register("social.facebook", { required:"field required"})} className=' border border-black'/>
+
+                
+                <label htmlFor=''>Twitter</label>
+                <input type='text' id='text' {...register("social.Twitter", { required:"field required"})} className=' border border-black'/>
+
             <button type="submit" className='border-2 border-green-700 w-3/5 self-center'>Submit</button>
             </div>
             <DevTool control={control}/>
