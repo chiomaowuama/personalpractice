@@ -12,6 +12,7 @@ function Signup() {
             social:{
             twitter:"",
             facebook:" ",
+            phoneNumber:["", ""]
                 
             }
         }
@@ -56,13 +57,17 @@ function Signup() {
                 })}   className=' border border-black'/>
                  <p className=''>{errors.email?.message }</p>
                 <label htmlFor="Phone">Phone No</label>
-                <input type="tel" name="" min={10} max={11} id="phone" {...register("phone", {required:"field required"})}  className=' border border-black'/>
+                <input type="tel" name="" min={10} max={11} id="phone" {...register("[phoneNumber.0", {required:"field required"})}  className=' border border-black'/>
 
-                <label htmlFor=''>FaceBook</label>
+                <label htmlFor="primaryPhone">confirm No</label>
+                <input type="tel" name="" min={10} max={11} id="phone" {...register("[phoneNumber.1", {required:"field required"})}  className=' border border-black'/>
+
+
+                <label htmlFor='facebook'>FaceBook</label>
                 <input type='text' id='text' {...register("social.facebook", { required:"field required"})} className=' border border-black'/>
 
                 
-                <label htmlFor=''>Twitter</label>
+                <label htmlFor='twitter'>Twitter</label>
                 <input type='text' id='text' {...register("social.Twitter", { required:"field required"})} className=' border border-black'/>
 
             <button type="submit" className='border-2 border-green-700 w-3/5 self-center'>Submit</button>
