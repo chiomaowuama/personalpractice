@@ -5,14 +5,10 @@ import { DevTool } from '@hookform/devtools'
 
 function Signup() {
     const Form = useForm({
-        defaultValues: async() =>{
-            const response = await fetch("https://jsonplaceholder.typicode.com/users/1")
-            const data = await response.json()
-            return{
-                username:"Bathman",
-                email:data.email,
-                phone:""
-            }
+        defaultValues:{
+            username: " ",
+            email:"",
+            channel:""
         }
     })
     const { register, control,handleSubmit,formState} = Form
@@ -46,7 +42,7 @@ function Signup() {
                     },
                     notBlackListed: (data) =>{
                         return(
-                            !data.endsWith("baddomain.com") || "This domain is not supported "
+                            !data.endsWith("baddomain.com") || "This domain is not "
                         )
                     }
 
