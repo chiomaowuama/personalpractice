@@ -10,15 +10,15 @@ function Signup() {
             email:"",
             channel:"",
             social:{
-            twitter:"",
-            facebook:" ",
+                twitter:"",
+                facebook:" ",
             
-        }, 
-        phoneNumber:["", ""],
-        phNumbers:[{
+            }, 
+            phoneNumber:["", ""],
+            phNumbers:[{
             number:"",
-        }],
-        age: 0
+            }],
+            age: 0
         }
     })
     const { register, control,handleSubmit,formState} = Form
@@ -102,15 +102,16 @@ function Signup() {
                 </div>
 
                 <div className="form-control">
-                    <label htmlFor="channel">Channel</label>
+                    <label htmlFor="Age">Age</label>
                     <input
-                        type="text"
-                        id="channel"
-                        {...register("channel", {
-                        required: { value: true, message: "Channel is required" },
+                        type="number"
+                        id="age"
+                        {...register("age", {
+                        valueAsNumber: true,
+                        required: { value: true, message: "Age is required" },
                         })}
                     />
-                    <p className="error">{errors.channel?.message}</p>
+                    <p className="error">{errors.age?.message}</p>
                 </div>
 
                 <label htmlFor='facebook'>FaceBook</label>
