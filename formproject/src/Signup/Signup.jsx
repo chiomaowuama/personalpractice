@@ -17,13 +17,12 @@ function Signup() {
         phoneNumber:["", ""],
         phNumbers:[{
             number:"",
-            control
         }]
         }
     })
     const { register, control,handleSubmit,formState} = Form
     const{ errors } = formState
-    const {fields} = useFieldArray({
+    const {fields, append, remove} = useFieldArray({
         name:'phNumbers',
         control
     })
@@ -82,16 +81,21 @@ function Signup() {
                     <label htmlFor=""></label>
                     <div>
                     {
-                        fields.map(() => {
+                        fields.map((field, index ) => {
                             return(
-                                <div className='form-control' key={(field.id)}>
-                                    <input type="text"{...register(`phNumber.${index}.number`)} />
-    
+                                <div className='flex flex-col space-y-2' key={(field.id)}>
+                                    <input type="text"{...register(`phNumber.${index}.number`)} className=' border border-black my-2'/>
+                                    {
+                                         index > 0 &&(
+                                            <button type="button" onClick={() => remove(index)} className=' border border-black'> Remove</button>
+                                         )
+                                    }
                                 </div>
     
                             )
                         })
                     }
+                    <button type="button" onClick={() => append({numbers:' '})} className='border-2 border-green-700 w-3/5 self-center'> Add phone number</button>
 
                     </div>
                 </div>
