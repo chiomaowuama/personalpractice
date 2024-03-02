@@ -17,7 +17,8 @@ function Signup() {
         phoneNumber:["", ""],
         phNumbers:[{
             number:"",
-        }]
+        }],
+        age: 0
         }
     })
     const { register, control,handleSubmit,formState} = Form
@@ -98,6 +99,18 @@ function Signup() {
                     <button type="button" onClick={() => append({numbers:' '})} className='border-2 border-green-700 w-3/5 self-center'> Add phone number</button>
 
                     </div>
+                </div>
+
+                <div className="form-control">
+                    <label htmlFor="channel">Channel</label>
+                    <input
+                        type="text"
+                        id="channel"
+                        {...register("channel", {
+                        required: { value: true, message: "Channel is required" },
+                        })}
+                    />
+                    <p className="error">{errors.channel?.message}</p>
                 </div>
 
                 <label htmlFor='facebook'>FaceBook</label>
