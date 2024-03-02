@@ -19,7 +19,7 @@ function Signup() {
             number:"",
             }],
             age: 0,
-            dob:new Date()
+            dob: new Date()
         }
     })
     const { register, control,handleSubmit,formState} = Form
@@ -124,16 +124,16 @@ function Signup() {
                 </div>
 
                 <div className="form-control">
-                    <label htmlFor="Date">Date</label>
+                    <label htmlFor="dob">Date of Birth</label>
                     <input
                         type="date"
                         id="dob"
                         {...register("dob", {
-                        valueAsNumber: true,
-                        required: { value: true, message: "Date of birth  is required" },
+                        valueAsDate: true,
+                        required: { value: true, message: "Date of Birth is required" },
                         })}
                     />
-                    <p className="error">{errors.dob.message}</p>
+                    <p className="error">{errors.dob?.message}</p>
                 </div>
 
 
