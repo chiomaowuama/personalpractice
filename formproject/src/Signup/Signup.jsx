@@ -18,7 +18,8 @@ function Signup() {
             phNumbers:[{
             number:"",
             }],
-            age: 0
+            age: 0,
+            dob:new Date()
         }
     })
     const { register, control,handleSubmit,formState} = Form
@@ -38,14 +39,19 @@ function Signup() {
         <form action="" onSubmit={handleSubmit(onSubmit)} noValidate className='flex flex-col justify-center items-center border-2 border-yellow-900 h-screen '>
             <div className='flex flex-col w-4/6 lg:w-2/6 space-y-2  border-2 border-green-900 shadow-xl shadow-slate-400 p-3' >
                 <p>Form Submission</p>
+
+                {/* username */}
                 <label htmlFor=''>Username</label>
                 <input type='text' id='text' {...register("username", { required:"field required"})} className=' border border-black'/>
                 <p className=' text-red-600 text-sm text-left'>{errors.username?.message }</p>
 
+
+                {/* password  */}
                 <label htmlFor="password">Password</label>
                 <input type="text" name="" id="password" {...register("password", {required:"username field required"})}  className=' border border-black' />
                 <p className=' text-red-600 text-sm text-left'>{errors.password?.message }</p>
 
+                {/* Email with customizations */}
                 <label htmlFor="email">Email</label>
                 <input type="email" name="" id="email" {...register("email", 
                 {pattern:{ 
@@ -70,14 +76,17 @@ function Signup() {
                 <p className=''>{errors.email?.message }</p>
 
 
+                {/* enter only two phone number */}
                 <label htmlFor="Phone">Phone No</label>
                 <input type="tel" name="" min={10} max={11} id="phone" {...register("[phoneNumber.0", {required:"field required"})}  className=' border border-black'/>
-                {/* <p className=' text-red-600 text-sm text-left'>{errors.phoneNumber?.message }</p> */}
+     
 
                 <label htmlFor="primaryPhone">confirm No</label>
                 <input type="tel" name="" min={10} max={11} id="phone" {...register("[phoneNumber.1", {required:"field required"})}  className=' border border-black'/>
-                {/* <p className=' text-red-600 text-sm text-left'>{errors.phoneNumber[1]?.message }</p> */}
-                
+
+
+
+                {/* enter numerouse phone number  */}
                 <div>
                     <label htmlFor=""></label>
                     <div>
@@ -100,7 +109,7 @@ function Signup() {
 
                     </div>
                 </div>
-
+                    {/* Date and Age */}
                 <div className="form-control">
                     <label htmlFor="Age">Age</label>
                     <input
@@ -114,15 +123,28 @@ function Signup() {
                     <p className="error">{errors.age?.message}</p>
                 </div>
 
+                <div className="form-control">
+                    <label htmlFor="Date">Date</label>
+                    <input
+                        type="date"
+                        id="dob"
+                        {...register("dob", {
+                        valueAsNumber: true,
+                        required: { value: true, message: "Date of birth  is required" },
+                        })}
+                    />
+                    <p className="error">{errors.dob.message}</p>
+                </div>
+
+
+                    {/* Social media part */}
                 <label htmlFor='facebook'>FaceBook</label>
                 <input type='text' id='text' {...register("social.facebook", { required:"facebook field required"})} className=' border border-black'/>
-                {/* <p className=' text-red-600 text-sm text-left'>{errors.social?.message }</p> */}
 
 
-                
                 <label htmlFor='twitter'>Twitter</label>
                 <input type='text' id='text' {...register("social.twitter", { required:"twitter field required"})} className=' border border-black'/>
-                {/* <p className=' text-red-600 text-sm text-left'>{errors.social.twitter?.message }</p> */}
+
 
             <button type="submit" className='border-2 border-green-700 w-3/5 self-center'>Submit</button>
             </div>
