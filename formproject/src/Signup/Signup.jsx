@@ -12,9 +12,9 @@ function Signup() {
             social:{
             twitter:"",
             facebook:" ",
-            phoneNumber:["", ""]
-                
-            }
+            
+        }, 
+        phoneNumber:["", ""]
         }
     })
     const { register, control,handleSubmit,formState} = Form
