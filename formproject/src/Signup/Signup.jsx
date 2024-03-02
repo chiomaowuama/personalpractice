@@ -1,5 +1,5 @@
 import React from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm,useFieldArray } from 'react-hook-form'
 import { DevTool } from '@hookform/devtools'
 // import { Devtool } from '@hookform/devtools'
 
@@ -14,11 +14,19 @@ function Signup() {
             facebook:" ",
             
         }, 
-        phoneNumber:["", ""]
+        phoneNumber:["", ""],
+        phNumbers:[{
+            number:"",
+            control
+        }]
         }
     })
     const { register, control,handleSubmit,formState} = Form
     const{ errors } = formState
+    const {fields} = useFieldArray({
+        name:'phNumbers',
+        control
+    })
 
      const onSubmit = (data) =>{
         
@@ -70,6 +78,23 @@ function Signup() {
                 <input type="tel" name="" min={10} max={11} id="phone" {...register("[phoneNumber.1", {required:"field required"})}  className=' border border-black'/>
                 {/* <p className=' text-red-600 text-sm text-left'>{errors.phoneNumber[1]?.message }</p> */}
                 
+                <div>
+                    <label htmlFor=""></label>
+                    <div>
+                    {
+                        fields.map(() => {
+                            return(
+                                <div className='form-control' key={(field.id)}>
+                                    <input type="text"{...register(`phNumber.${index}.number`)} />
+    
+                                </div>
+    
+                            )
+                        })
+                    }
+
+                    </div>
+                </div>
 
                 <label htmlFor='facebook'>FaceBook</label>
                 <input type='text' id='text' {...register("social.facebook", { required:"facebook field required"})} className=' border border-black'/>
