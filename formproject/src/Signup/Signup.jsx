@@ -23,7 +23,9 @@ function Signup() {
         }
     })
     const { register, control,handleSubmit,formState, watch, getValues, setValue} = Form
-    const{ errors } = formState
+    const{ errors,touchedFields, dirtyFields } = formState
+
+    console.log(touchedFields, dirtyFields)
     
     const {fields, append, remove} = useFieldArray({
         name:'phNumbers',
@@ -130,6 +132,7 @@ function Signup() {
                         type="number"
                         id="age"
                         {...register("age", {
+                        disabled:watch("dob")==="",
                         valueAsNumber: true,
                         required: { value: true, message: "Age is required" },
                         })}
