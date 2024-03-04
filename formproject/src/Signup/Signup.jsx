@@ -22,7 +22,7 @@ function Signup() {
             dob: new Date()
         }
     })
-    const { register, control,handleSubmit,formState, watch, getValues} = Form
+    const { register, control,handleSubmit,formState, watch, getValues, setValue} = Form
     const{ errors } = formState
     
     const {fields, append, remove} = useFieldArray({
@@ -34,7 +34,12 @@ function Signup() {
 
     // the getvalues part
     const handleGetvalues = () => {
-        console.log("Get Values", getValues())
+        console.log("Get Values", getValues( ))
+    }
+
+    // setvalue field
+    const handleSetvalues = () => {
+        setValue('username', "")
     }
 
     const onSubmit = (data) =>{
@@ -157,6 +162,7 @@ function Signup() {
 
             <button type="submit" className='border-2 border-green-700 w-3/5 self-center'>Submit</button>
             <button type='button' onClick={handleGetvalues}  className='border-2 border-green-700 w-3/5 self-center'>Get Values</button>
+            <button type='button' onClick={handleSetvalues}  className='border-2 border-green-700 w-3/5 self-center'>Set Values</button>
             
             </div>
             <DevTool control={control}/>
