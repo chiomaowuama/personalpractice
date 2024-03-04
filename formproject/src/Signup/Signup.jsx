@@ -22,23 +22,27 @@ function Signup() {
             dob: new Date()
         }
     })
-    const { register, control,handleSubmit,formState} = Form
+    const { register, control,handleSubmit,formState, watch} = Form
     const{ errors } = formState
+    
     const {fields, append, remove} = useFieldArray({
         name:'phNumbers',
         control
     })
+    // this is for the watched method
+    const watchUsername = watch("username")
 
-     const onSubmit = (data) =>{
+    const onSubmit = (data) =>{
         
         console.log("working", data)
-     }
+    }
   return (
     <>
     <div>
         <form action="" onSubmit={handleSubmit(onSubmit)} noValidate className='flex flex-col justify-center items-center border-2 border-yellow-900 h-screen '>
             <div className='flex flex-col w-4/6 lg:w-2/6 space-y-2  border-2 border-green-900 shadow-xl shadow-slate-400 p-3' >
                 <p>Form Submission</p>
+                <h1>watch username: {watchUsername}</h1>
 
                 {/* username */}
                 <label htmlFor=''>Username</label>
@@ -47,9 +51,9 @@ function Signup() {
 
 
                 {/* password  */}
-                <label htmlFor="password">Password</label>
+                {/* <label htmlFor="password">Password</label>
                 <input type="text" name="" id="password" {...register("password", {required:"username field required"})}  className=' border border-black' />
-                <p className=' text-red-600 text-sm text-left'>{errors.password?.message }</p>
+                <p className=' text-red-600 text-sm text-left'>{errors.password?.message }</p> */}
 
                 {/* Email with customizations */}
                 <label htmlFor="email">Email</label>
@@ -76,14 +80,14 @@ function Signup() {
                 <p className=''>{errors.email?.message }</p>
 
 
-                {/* enter only two phone number */}
-                <label htmlFor="Phone">Phone No</label>
+                {/* enter only two phone number and itscommentted cos of space .same as the rest */}
+                {/* <label htmlFor="Phone">Phone No</label>
                 <input type="tel" name="" min={10} max={11} id="phone" {...register("[phoneNumber.0", {required:"field required"})}  className=' border border-black'/>
      
 
                 <label htmlFor="primaryPhone">confirm No</label>
                 <input type="tel" name="" min={10} max={11} id="phone" {...register("[phoneNumber.1", {required:"field required"})}  className=' border border-black'/>
-
+ */}
 
 
                 {/* enter numerouse phone number  */}
