@@ -1,5 +1,5 @@
 import React from 'react'
-import { useForm,useFieldArray } from 'react-hook-form'
+import { FieldErrors, useForm,useFieldArray } from 'react-hook-form'
 import { DevTool } from '@hookform/devtools'
 // import { Devtool } from '@hookform/devtools'
 
@@ -31,6 +31,13 @@ function Signup() {
         name:'phNumbers',
         control
     })
+
+    // the error passed into the form
+    const onError = (errors: fieldErrors<Form>) => {
+        console.log("Form errors", errors);
+    };
+
+
     // this is for the watched method
     const watchUsername = watch()
     console.log( watchUsername)
@@ -52,7 +59,7 @@ function Signup() {
   return (
     <>
     <div>
-        <form action="" onSubmit={handleSubmit(onSubmit)} noValidate className='flex flex-col justify-center items-center border-2 border-yellow-900 h-screen '>
+        <form action="" onSubmit={handleSubmit(onSubmit, onError)} noValidate className='flex flex-col justify-center items-center border-2 border-yellow-900 h-screen '>
             <div className='flex flex-col w-4/6 lg:w-2/6 space-y-2  border-2 border-green-900 shadow-xl shadow-slate-400 p-3' >
                 <p>Form Submission</p>
 
