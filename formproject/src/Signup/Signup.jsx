@@ -32,7 +32,8 @@ function Signup() {
         control
     })
     // this is for the watched method
-    const watchUsername = watch("username")
+    const watchUsername = watch()
+    console.log( watchUsername)
 
     // the getvalues part
     const handleGetvalues = () => {
@@ -54,7 +55,7 @@ function Signup() {
         <form action="" onSubmit={handleSubmit(onSubmit)} noValidate className='flex flex-col justify-center items-center border-2 border-yellow-900 h-screen '>
             <div className='flex flex-col w-4/6 lg:w-2/6 space-y-2  border-2 border-green-900 shadow-xl shadow-slate-400 p-3' >
                 <p>Form Submission</p>
-                <h1>watch username: {watchUsername}</h1>
+
 
                 {/* username */}
                 <label htmlFor=''>Username</label>
