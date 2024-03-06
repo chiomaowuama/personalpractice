@@ -9,6 +9,7 @@ import About from './About/About.jsx'
 import Contactus from './Contactus/Contactus.jsx'
 import Blogs from './Blogs/Blogs.jsx'
 import Signup from './Signup/Signup.jsx'
+import Signuptwo from './AnotherSignup/Signuptwo.jsx'
 
 
 const router = createBrowserRouter(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
         <Route path='/Contactus' element={<Contactus/>}/>
         <Route path='/Blogs' element={<Blogs/>}/>
         <Route path='/Signup' element={<Signup/>}/>
+        <Route path='/Signuptwo' element={<Signuptwo/>}/>
 
       </Route>
   )
