@@ -33,7 +33,7 @@ function Signup() {
     })
 
     // the error passed into the form
-    const onError = (errors: fieldErrors<Form>) => {
+    const onError = (errors) => {
         console.log("Form errors", errors);
     };
 
