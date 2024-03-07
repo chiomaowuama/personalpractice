@@ -23,22 +23,22 @@ function Signuptwo() {
     <>
     <div className='allbg  h-lvh flex justify-center'>
 
-       <form action="" noValidate onClick={handleSubmit(alldetails)}  className=' px-2 pb-8 bg-green-800 w-4/6 lg:w-3/6 self-center text-white'>
+       <form action="" noValidate onClick={handleSubmit(alldetails)}  className=' px-2 pb-8 bg-green-800 border-2 border-green-950 rounded-3xl w-4/6 lg:w-2/6 self-center text-white'>
             <h1 className='text-2xl text-wrap font-serif font-semibold uppercase text-center text-white py-3'>my own form</h1>
-            <div className='flex flex-col space-y-3 mb-2'>
-                <label htmlFor="">FirstName</label>
-                <input type="text" id="firstname" {...register('firstname', {required:"firstname is required"})} className=' text-black border border-dashed border-gray-400 w-4/5 lg:w-2/5' />
+            <div className='flex flex-col w-5/6 mx-auto  space-y-4 mb-2  '>
+                <label htmlFor="" className=' text-xl font-mono font-semibold'>FirstName</label>
+                <input type="text" id="firstname" {...register('firstname', {required:"firstname is required"})} className='border border-green-900 text-black outline-none w-4/5 lg:w-full rounded-2xl pl-4' />
                 <p className='text-xs font-bold text-red-950'>{errors.firstname?.message}</p>
               
             </div> 
-            <div className='flex flex-col space-y-3  mb-2'>
-                <label htmlFor="">SecondName</label>
+            <div className='flex flex-col  w-5/6 mx-auto  space-y-3  mb-2'>
+                <label htmlFor="" className=' text-xl font-mono font-semibold'>SecondName</label>
  
-                <input type="text"  {...register('secondname', {required:"secondname is required"})}   className=' text-black border  w-4/5 lg:w-2/5'/>
+                <input type="text"  {...register('secondname', {required:"secondname is required"})}   className='border border-green-900 text-black outline-none w-4/5 lg:w-full rounded-2xl pl-4'/>
                 <p className='text-xs font-bold text-red-950'>{errors.secondname?.message}</p>
             </div>
-            <div className='flex flex-col space-y-2  mb-2'>
-                <label htmlFor="">Email</label>
+            <div className='flex flex-col  w-5/6 mx-auto  space-y-2  mb-2'>
+                <label htmlFor="" className=' text-xl font-mono font-semibold'>Email</label>
                 <input type="email" id="email" {...register('email', {
                       pattern: {
                         value:
@@ -56,23 +56,32 @@ function Signuptwo() {
 
                       
                     required:"email must be filled"
-                })} className=' text-black border border-dashed border-gray-400 w-4/5 lg:w-2/5' />
+                })} className='border border-green-900 text-black outline-none w-4/5 lg:w-full rounded-2xl pl-4'/>
                 <p className='text-xs font-bold text-red-950'>{errors.email?.message}</p>
             </div>
            
-            <div className='flex flex-col space-y-2  mb-2'>
-                <label htmlFor="">PhoneNo</label>
-                <input type="tel" id="phone" {...register('phone', {
+            <div className='flex flex-col  w-5/6 mx-auto  space-y-2  mb-2'>
+                <label htmlFor="" className=' text-xl font-mono font-semibold'>PhoneNo</label>
+                <input type="tel" id="phone"  {...register('phone', {
                     validate:{
                         telvalidate: (data) =>{
-                            return(data  !== `+0123456789` || "must be a number")
+                            return /^[0-9]+$/.test(data) || 'Must be a number'
                         }
                     },
-                    required:"phonenumber is required"})} className=' text-black border border-dashed border-gray-400 w-4/5 lg:w-2/5' />
+                    maxLength:{
+                        value:11,
+                        message: "number must not exceed 11"
+                    },
+                    minLength:{
+                        value:11,
+                        message:"number must not be lower than 11"
+                    },
+                    valueAsNumber: true,
+                    required:"phonenumber is required"})} className='border border-green-900 text-black outline-none w-4/5 lg:w-full rounded-2xl pl-4' />
                 <p className='text-xs font-bold text-red-950'>{errors.phone?.message}</p>
             </div>
-            <div>
-                <button type="button" className='border-white border-2 bg-green-800  my-2 rounded-md w-4/5 lg:w-2/5'> submit</button>
+            <div className='border-2 border-green-900  '>
+                <button type="button" className='border-white border-2 bg-green-800   rounded-md  w-4/5 lg:w-4/5 mx-auto'> submit</button>
             </div>
        
        </form>
