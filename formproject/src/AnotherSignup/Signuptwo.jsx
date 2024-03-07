@@ -21,28 +21,31 @@ function Signuptwo() {
             <div className='flex flex-col space-y-3 mb-2'>
                 <label htmlFor="">FirstName</label>
                 <input type="text" id="firstname" {...register('firstname', {required:"firstname is required"})} className=' text-black border border-dashed border-gray-400 w-4/5 lg:w-2/5' />
+                <p>{errors.firstname?.message}</p>
               
             </div> 
             <div className='flex flex-col space-y-3  mb-2'>
                 <label htmlFor="">SecondName</label>
  
                 <input type="text"  {...register('secondname', {required:"secondname is required"})}   className=' text-black border  w-4/5 lg:w-2/5'/>
-
+                <p>{errors.secondname?.message}</p>
             </div>
             <div className='flex flex-col space-y-2  mb-2'>
                 <label htmlFor="">Email</label>
-                <input type="email" id="Email" {...register('email', {
+                <input type="email" id="email" {...register('email', {
                       pattern: {
                         value:
                           /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                         message: "Invalid email format",
                       },
                 })} className=' text-black border border-dashed border-gray-400 w-4/5 lg:w-2/5' />
+                <p>{errors.email?.message}</p>
             </div>
            
             <div className='flex flex-col space-y-2  mb-2'>
                 <label htmlFor="">PhoneNo</label>
-                <input type="tel" id="tell" {...register('phone', {required:"phonenumber is required"})} className=' text-black border border-dashed border-gray-400 w-4/5 lg:w-2/5' />
+                <input type="tel" id="phone" {...register('phone', {required:"phonenumber is required"})} className=' text-black border border-dashed border-gray-400 w-4/5 lg:w-2/5' />
+                <p>{errors.phone?.message}</p>
             </div>
             <div>
                 <button type="button" className='border-white border-2 bg-green-800  my-2 rounded-md w-4/5 lg:w-2/5'> submit</button>
