@@ -76,7 +76,15 @@ function Signuptwo() {
                         value:11,
                         message:"number must not be lower than 11"
                     },
-                    valueAsNumber: true,
+                    // maxLength:{
+                    //     value:11,
+                    //     message: "number must not exceed 11"
+                    // },
+                    // minLength:{
+                    //     value:11,
+                    //     message:"number must not be lower than 11"
+                    // },
+                    // valueAsNumber: true,
                     required:"phonenumber is required"})} className='border border-green-900 text-black outline-none w-4/5 lg:w-full rounded-2xl pl-4' />
                 <p className='text-xs font-bold text-red-950'>{errors.phone?.message}</p>
             </div>
