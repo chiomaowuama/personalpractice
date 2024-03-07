@@ -80,8 +80,8 @@ function Signuptwo() {
                     required:"phonenumber is required"})} className='border border-green-900 text-black outline-none w-4/5 lg:w-full rounded-2xl pl-4' />
                 <p className='text-xs font-bold text-red-950'>{errors.phone?.message}</p>
             </div>
-            <div className='border-2 border-green-900  '>
-                <button type="button" className='border-white border-2 bg-green-800   rounded-md  w-4/5 lg:w-4/5 mx-auto'> submit</button>
+            <div className='flex flex-col justify-center items-center'>
+                <button type="button" className='border-white border-2 bg-green-800   rounded-xl w-4/5 lg:w-4/5 '> submit</button>
             </div>
        
        </form>
