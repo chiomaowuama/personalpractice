@@ -62,7 +62,13 @@ function Signuptwo() {
            
             <div className='flex flex-col space-y-2  mb-2'>
                 <label htmlFor="">PhoneNo</label>
-                <input type="tel" id="phone" {...register('phone', {required:"phonenumber is required"})} className=' text-black border border-dashed border-gray-400 w-4/5 lg:w-2/5' />
+                <input type="tel" id="phone" {...register('phone', {
+                    validate:{
+                        telvalidate: (data) =>{
+                            return(data  !== `+0123456789` || "must be a number")
+                        }
+                    },
+                    required:"phonenumber is required"})} className=' text-black border border-dashed border-gray-400 w-4/5 lg:w-2/5' />
                 <p className='text-xs font-bold text-red-950'>{errors.phone?.message}</p>
             </div>
             <div>
