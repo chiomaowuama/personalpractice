@@ -3,7 +3,14 @@ import { useForm } from 'react-hook-form'
 import { DevTool} from '@hookform/devtools'
 
 function Signuptwo() {
-    const form = useForm()
+    const form = useForm({
+        defaultValues:{
+            firstname:"",
+            secondname:"",
+            email:"",
+            phone:""
+        }
+    })
     const {register, control,handleSubmit, formState} = form
     const {errors} = formState
 
@@ -21,14 +28,14 @@ function Signuptwo() {
             <div className='flex flex-col space-y-3 mb-2'>
                 <label htmlFor="">FirstName</label>
                 <input type="text" id="firstname" {...register('firstname', {required:"firstname is required"})} className=' text-black border border-dashed border-gray-400 w-4/5 lg:w-2/5' />
-                <p>{errors.firstname?.message}</p>
+                <p className='text-xs font-bold text-red-950'>{errors.firstname?.message}</p>
               
             </div> 
             <div className='flex flex-col space-y-3  mb-2'>
                 <label htmlFor="">SecondName</label>
  
                 <input type="text"  {...register('secondname', {required:"secondname is required"})}   className=' text-black border  w-4/5 lg:w-2/5'/>
-                <p>{errors.secondname?.message}</p>
+                <p className='text-xs font-bold text-red-950'>{errors.secondname?.message}</p>
             </div>
             <div className='flex flex-col space-y-2  mb-2'>
                 <label htmlFor="">Email</label>
@@ -38,14 +45,25 @@ function Signuptwo() {
                           /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                         message: "Invalid email format",
                       },
+                      validate:{
+                        notvalid:(data) => {
+                            return(data !== "admin@example.com"  || "enter a different email")
+                        },
+                        blacklisting:(data) => {
+                            return(!data.endsWith("baddomain.com") || "This domain is not allowed ")
+                        }
+                      },
+
+                      
+                    required:"email must be filled"
                 })} className=' text-black border border-dashed border-gray-400 w-4/5 lg:w-2/5' />
-                <p>{errors.email?.message}</p>
+                <p className='text-xs font-bold text-red-950'>{errors.email?.message}</p>
             </div>
            
             <div className='flex flex-col space-y-2  mb-2'>
                 <label htmlFor="">PhoneNo</label>
                 <input type="tel" id="phone" {...register('phone', {required:"phonenumber is required"})} className=' text-black border border-dashed border-gray-400 w-4/5 lg:w-2/5' />
-                <p>{errors.phone?.message}</p>
+                <p className='text-xs font-bold text-red-950'>{errors.phone?.message}</p>
             </div>
             <div>
                 <button type="button" className='border-white border-2 bg-green-800  my-2 rounded-md w-4/5 lg:w-2/5'> submit</button>
